@@ -1,0 +1,58 @@
+﻿<Window x:Class="Kasirku.UpdateData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kasirku"
+        mc:Ignorable="d"
+        Title="Update Data" Height="750" Width="800">
+    <Grid Background="#000080">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="721*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="Kembali" Click="Button_Click" Margin="65,662,618.6,28.8" />
+        <DataGrid SelectionChanged="DataTransaksi_SelectionChanged" x:Name="dataTransaksi" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="285" 
+                  Margin="65,10,0,0" VerticalAlignment="Top" Width="650">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Transaksi" Binding="{Binding Id_transaksi}"/>
+                <DataGridTextColumn Header="Id Admin" Binding="{Binding Id_barang}"/>
+                <DataGridTextColumn Header="Nama Barang" Binding="{Binding nama_barang}"/>
+                <DataGridTextColumn Header="Harga" Binding="{Binding harga_barang}"/>
+                <DataGridTextColumn Header="Jumlah" Binding="{Binding jumlah_barang}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Height="166">
+            <GroupBox Header="Pemesanan" Height="151" Width="360" Foreground="White"/>
+        </Label>
+        
+        <Label Content="Harga" HorizontalAlignment="Left" Margin="81,407,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White" 
+               RenderTransformOrigin="0.405,0.638"/>
+        <Label Content="Barang" HorizontalAlignment="Left" Margin="76,359,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White" 
+               RenderTransformOrigin="1.315,0.567"/>
+        <Label Content="Jumlah" HorizontalAlignment="Left" Margin="81,458,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White"/>
+        <ComboBox SelectionChanged="CbBarang_SelectionChanged"  x:Name="cbBarang" HorizontalAlignment="Left" Margin="234,361,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="jumlah" HorizontalAlignment="Left" Height="23" Margin="234,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 TextChanged="Jumlah_TextChanged"/>
+        <TextBlock Name="harga" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="234,407,0,0" TextAlignment="Right" VerticalAlignment="Top" Width="120"/>
+
+        <Label HorizontalAlignment="Left" Margin="440.2,340,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Grid.Column="3">
+            <GroupBox Header="Detail" Height="156" Width="302" Foreground="White"/>
+        </Label>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="481,380,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White"/>
+        <Label Content="Bayar" HorizontalAlignment="Left" Margin="476,423,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White" 
+               RenderTransformOrigin="1.132,0.5"/>
+        <Label Content="Kembali" HorizontalAlignment="Left" Margin="476,472,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" Foreground="White"/>
+        <TextBlock Name="total"  Foreground="White" HorizontalAlignment="Left" Height="23" Margin="595,373,0,0" TextAlignment="Right" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="bayar" HorizontalAlignment="Left" Height="23" Margin="595,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" TextChanged="Bayar_TextChanged"/>
+        <TextBlock Name="sosok" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="595,472,0,0" TextAlignment="Right" VerticalAlignment="Top" Width="120"/>
+
+        <Button x:Name="btnTambah" Click="BtnTambah_Click" Content="Tambah" HorizontalAlignment="Left" Margin="522,571,0,0" VerticalAlignment="Top" Width="79" Height="33" 
+                RenderTransformOrigin="0.63,0.436"/>
+        <Button x:Name="btnEdit" Click="BtnEdit_Click" Content="Update" HorizontalAlignment="Left" Margin="354,571,0,0" VerticalAlignment="Top" Width="79" Height="33" 
+                RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnHapus" Click="BtnHapus_Click" Content="Hapus" HorizontalAlignment="Left" Margin="198,571,0,0" VerticalAlignment="Top" Width="79" Height="33"/>
+    </Grid>
+</Window>

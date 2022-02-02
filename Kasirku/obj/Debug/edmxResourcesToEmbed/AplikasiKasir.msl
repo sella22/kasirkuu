@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kasirModelStoreContainer" CdmEntityContainer="kasirEntities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="kasirModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="Id_admin" ColumnName="Id_admin" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Barangs">
+      <EntityTypeMapping TypeName="kasirModel.Barang">
+        <MappingFragment StoreEntitySet="Barang">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga_barang" ColumnName="harga_barang" />
+          <ScalarProperty Name="jumlah_barang" ColumnName="jumlah_barang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaksis">
+      <EntityTypeMapping TypeName="kasirModel.Transaksi">
+        <MappingFragment StoreEntitySet="Transaksi">
+          <ScalarProperty Name="Id_transaksi" ColumnName="Id_transaksi" />
+          <ScalarProperty Name="Id_barang" ColumnName="Id_barang" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga_barang" ColumnName="harga_barang" />
+          <ScalarProperty Name="jumlah_barang" ColumnName="jumlah_barang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
